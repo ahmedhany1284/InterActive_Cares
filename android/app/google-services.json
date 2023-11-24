@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "947983809243",
+    "project_id": "interactive-care",
+    "storage_bucket": "interactive-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947983809243:android:f0ab6b37a29e76716aaafe",
+        "android_client_info": {
+          "package_name": "com.example.interactive_care"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlJp4bpmcztcut7qAzqGsSKAz1VRKzzEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
