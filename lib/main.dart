@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:interactive_care/features/home_page/home_view.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:interactive_care/constants.dart';
+import 'package:interactive_care/core/utils/app_router.dart';
 import 'package:interactive_care/firebase_options.dart';
 
 void main() async{
@@ -16,13 +18,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
+      debugShowCheckedModeBanner: false,
       title: 'InterActive Care',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: ThemeData().copyWith(
+        scaffoldBackgroundColor: kprimaryColor,
+        textTheme:
+        GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
-      home: const HomeView(),
     );
   }
 }
