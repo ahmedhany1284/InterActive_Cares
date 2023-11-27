@@ -23,6 +23,11 @@ if (flutterVersionName == null) {
 }
 
 android {
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+        }
+    }
     namespace "com.example.interactive_care"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion

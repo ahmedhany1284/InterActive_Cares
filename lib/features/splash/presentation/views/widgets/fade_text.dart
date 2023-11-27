@@ -16,7 +16,7 @@ class FadeText extends StatelessWidget {
         return FadeTransition(
           opacity: fadeAnimation,
           child: const Text(
-            'Country’s one of the most prominent virtual platforms for providing academic, career & skill development',
+            'most prominent virtual platforms',
             style: TextStyle(
               color: Colors.black,
             ),

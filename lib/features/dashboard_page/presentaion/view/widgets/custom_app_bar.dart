@@ -8,8 +8,8 @@ import 'package:interactive_care/core/utils/app_router.dart';
 import 'package:interactive_care/features/login/presentation/view_model/cubit/cubit.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
+  const CustomAppBar({super.key, required this.pageName});
+  final String pageName;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,8 +29,8 @@ class CustomAppBar extends StatelessWidget {
           const SizedBox(
             width: 20.0,
           ),
-          const Text(
-            'Dashboard',
+           Text(
+            pageName,
             style: Styles.textStyle18,
           ),
           const Spacer(),

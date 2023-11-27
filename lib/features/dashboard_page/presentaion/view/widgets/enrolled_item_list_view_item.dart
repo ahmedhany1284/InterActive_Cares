@@ -26,7 +26,7 @@ class EnrolledCourseItem extends StatelessWidget {
           child: Row(
             children: [
               const CustomImage(
-                imageURL: 'https://interactivecares-courses.com/wp-content/uploads/2021/10/5618169-scaled.jpg',
+                imageURL: 'https://interactivecares-courses.com/wp-content/uploads/2023/10/website.png',
               ),
               const SizedBox(
                 width: 30,
@@ -38,7 +38,7 @@ class EnrolledCourseItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        'Android App Development',
+                        'Complete Flutter App Development Career Path',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Styles.textStyle18.copyWith(),

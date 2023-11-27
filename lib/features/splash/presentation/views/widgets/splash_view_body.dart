@@ -60,7 +60,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateTo() {
     Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
       () async{
 
 

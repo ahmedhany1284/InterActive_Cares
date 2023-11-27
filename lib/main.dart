@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:interactive_care/constants.dart';
+import 'package:interactive_care/core/styles/bloc-observer.dart';
 import 'package:interactive_care/core/utils/app_router.dart';
 import 'package:interactive_care/features/login/presentation/view_model/cubit/cubit.dart';
 import 'package:interactive_care/firebase_options.dart';
@@ -13,6 +14,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  Bloc.observer = MyBlocObserver();
   bool isUserLoggedIn() {
     User? user = FirebaseAuth.instance.currentUser;
     return user != null;

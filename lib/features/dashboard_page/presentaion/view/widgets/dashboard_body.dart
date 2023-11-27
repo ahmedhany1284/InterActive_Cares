@@ -13,7 +13,7 @@ class DashboardBody extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomAppBar(),
+            CustomAppBar(pageName: 'Dashboard',),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: KAppPadding),
               child: Align(

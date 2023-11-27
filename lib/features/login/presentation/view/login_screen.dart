@@ -28,6 +28,13 @@ class LoginScreen extends StatelessWidget {
       create: (BuildContext context) => LoginCubit(),
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {
+          if(state is LoginSuccessState){
+          showToast(
+            massage: 'Logged in Successfully',
+            state: ToastStates.SUCCESS,
+          );
+          context.go(AppRouter.kDashboard);
+        }
           if (state is LoginErrorState) {
             String msg =
                 state.error.substring(state.error.indexOf("]") + 1).trim();
@@ -37,13 +44,7 @@ class LoginScreen extends StatelessWidget {
               state: ToastStates.ERROR,
             );
           }
-          if(state is LoginSuccessState){
-            showToast(
-              massage: 'Logged in Successfully',
-              state: ToastStates.SUCCESS,
-            );
-            context.go(AppRouter.kDashboard);
-          }
+
         },
 
         builder: (context, state) {
@@ -118,7 +119,7 @@ class LoginScreen extends StatelessWidget {
                               return defaultButton(
                                 function: () async {
                                   if (formkey.currentState!.validate()) {
-                                    LoginCubit.get(context).checkIfUserSignedIn(
+                                    LoginCubit.get(context).userLogin(
                                       email: emailController.text,
                                       password: passwordController.text,
                                     );

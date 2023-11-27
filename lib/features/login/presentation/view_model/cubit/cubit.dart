@@ -10,32 +10,22 @@ class LoginCubit extends Cubit<LoginStates> {
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
-  // Function to check if the user is already signed in
-  void checkIfUserSignedIn({
-    required String email,
-    required String password,
-  }) {
-    if (FirebaseAuth.instance.currentUser != null) {
-      userLogin(email:email ,password:password );
-    }
-    else{
-      emit(LoginErrorState('User Not Found'));
-    }
-  }
 
-  void userLogin({
+
+  Future<void> userLogin({
     required String email,
     required String password,
-  }) {
-    emit(LoginLoadingState());
-    FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    ).then((value) {
-      emit(LoginSuccessState(value.user!.uid));
-    }).catchError((error){
+  }) async {
+    try {
+      emit(LoginLoadingState());
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      emit(LoginSuccessState(userCredential.user!.uid));
+    } catch (error) {
       emit(LoginErrorState(error.toString()));
-    });
+    }
   }
 
   IconData suffix = Icons.visibility_outlined;
