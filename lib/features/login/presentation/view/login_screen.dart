@@ -8,11 +8,10 @@ import 'package:interactive_care/core/widgets/custom_toast.dart';
 import 'package:interactive_care/core/widgets/default_button.dart';
 import 'package:interactive_care/core/widgets/default_form_field.dart';
 
-import 'package:interactive_care/core/widgets/navigator.dart';
+
 import 'package:interactive_care/features/login/presentation/view_model/cubit/cubit.dart';
 import 'package:interactive_care/features/login/presentation/view_model/cubit/states.dart';
 
-import 'package:interactive_care/features/regester/presentaion/view/register_screen.dart';
 
 import '../../../../core/widgets/dafault_text _button.dart';
 class LoginScreen extends StatelessWidget {
@@ -139,7 +138,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             defaultTextButton(
                               function: () {
-                                navigateTo(context, RegisterScreen());
+                                context.push(AppRouter.kRegister);
                               },
                               text: 'Register',
                             ),

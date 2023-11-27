@@ -48,4 +48,17 @@ class LoginCubit extends Cubit<LoginStates> {
 
     emit(LoginChangePasswordState());
   }
+
+  Future<void> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      print('User signed out successfully');
+    } on FirebaseAuthException catch (e) {
+      print('Error during sign-out: $e');
+    }
+  }
+
 }
+
+
+

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:interactive_care/features/dashboard_page/dashboard.dart';
+import 'package:interactive_care/features/course_details/presentaion/view/course_details_view.dart';
+import 'package:interactive_care/features/dashboard_page/presentaion/view/dashboard.dart';
 
 import 'package:interactive_care/features/login/presentation/view/login_screen.dart';
 import 'package:interactive_care/features/regester/presentaion/view/register_screen.dart';
@@ -11,9 +12,9 @@ abstract class AppRouter {
   static const kDashboard = '/dashboard';
   static const kLogIn = '/login';
   static const kRegister = '/register';
+  static const kCourseDetails = '/courseDetails';
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
-
       GoRoute(
         path: kSplashView,
         builder: (BuildContext context, GoRouterState state) =>
@@ -33,6 +34,11 @@ abstract class AppRouter {
         path: kRegister,
         builder: (BuildContext context, GoRouterState state) =>
             RegisterScreen(),
+      ),
+      GoRoute(
+        path: kCourseDetails,
+        builder: (BuildContext context, GoRouterState state) =>
+            const CourceDetailsView(),
       ),
     ],
   );

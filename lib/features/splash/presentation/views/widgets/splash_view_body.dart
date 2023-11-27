@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:interactive_care/constants.dart';
 import 'package:interactive_care/core/styles/assets.dart';
 import 'package:interactive_care/core/utils/app_router.dart';
 import 'package:interactive_care/features/splash/presentation/views/widgets/fade_text.dart';
@@ -60,8 +61,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void navigateTo() {
     Future.delayed(
       const Duration(seconds: 2),
-      () {
-        GoRouter.of(context).go(AppRouter.kLogIn);
+      () async{
+
+
+         logged?GoRouter.of(context).go(AppRouter.kDashboard):GoRouter.of(context).go(AppRouter.kLogIn);
       },
     );
   }
